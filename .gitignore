@@ -1,0 +1,3 @@
+# Design source bundle (contains client PDFs / one-sheet not meant for the public repo)
+_design_source/
+*.zip
