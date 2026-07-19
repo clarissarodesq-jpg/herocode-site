@@ -1,3 +1,6 @@
+// Visitors who ask their device for reduced motion get static slides
+var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 // Hero slideshow: 21 slides cross-fading every 2.8s (matches design prototype)
 (function () {
   var slides = document.querySelectorAll('.hero__slide');
@@ -28,6 +31,7 @@
   }
 
   function start() {
+    if (prefersReducedMotion) return;
     timer = setInterval(function () { show((active + 1) % slides.length); }, 2800);
   }
 
@@ -37,7 +41,7 @@
 // FAQ background: portraits rotating in reverse order every 3.4s
 (function () {
   var slides = document.querySelectorAll('.faq__bg');
-  if (!slides.length) return;
+  if (!slides.length || prefersReducedMotion) return;
 
   var active = 0;
 

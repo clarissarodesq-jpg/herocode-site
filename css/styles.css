@@ -814,6 +814,15 @@ a { text-decoration: none; }
   margin-bottom: 12px;
 }
 
+.footer__links--site {
+  margin-bottom: 10px;
+}
+
+.footer__links--site a {
+  color: rgba(244,239,231,.85);
+  font-weight: 600;
+}
+
 .footer__links a {
   font-size: 13px;
   font-weight: 500;
@@ -1328,6 +1337,24 @@ strong.txt-green { color: var(--green); }
   font-size: 16px;
   color: rgba(255,255,255,.85);
   font-weight: 500;
+}
+
+/* ---------------- Reduced motion ---------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  .hero__slide, .faq__bg { transition: none; }
+
+  /* Marquee becomes a manually scrollable row */
+  .marquee { overflow-x: auto; }
+  .marquee__track { animation: none; }
+  .marquee__group[aria-hidden="true"] { display: none; }
+
+  .faq__item::details-content { transition: none; }
+
+  .btn-primary:hover { transform: none; }
+  .quote-card--featured:hover { transform: none; }
 }
 
 /* ---------------- Responsive ---------------- */
