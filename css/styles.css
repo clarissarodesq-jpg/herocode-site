@@ -324,9 +324,6 @@ a { text-decoration: none; }
   color: rgba(244,239,231,.66);
 }
 
-/* Per the handoff prototype, the "O" card body stays at 14px */
-.move--o p { font-size: 14px; }
-
 /* ---------------- About / facilitator ---------------- */
 
 .about {
