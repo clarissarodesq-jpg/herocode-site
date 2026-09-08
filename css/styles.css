@@ -324,6 +324,39 @@ a { text-decoration: none; }
   color: rgba(244,239,231,.66);
 }
 
+/* ---------------- Formats (workshop or keynote) ---------------- */
+
+.formats {
+  padding: 72px 48px;
+  background: var(--bg-secondary);
+  border-top: 1px solid rgba(255,255,255,.07);
+}
+
+.formats h2 {
+  font-family: 'Anton', sans-serif;
+  font-size: 58px;
+  line-height: .95;
+  margin: 10px 0 14px;
+  color: #fff;
+}
+
+.info-card .info-card__meta {
+  margin-top: 16px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .02em;
+  color: var(--gold);
+}
+
+.formats__note {
+  margin: 34px auto 0;
+  max-width: 720px;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(244,239,231,.7);
+}
+
 /* ---------------- About / facilitator ---------------- */
 
 .about {
@@ -1536,8 +1569,8 @@ strong.txt-green { color: var(--green); }
   .hero__lede { font-size: 17px; }
   .hero__actions { flex-wrap: wrap; }
   .hero__dots { right: 24px; left: 24px; flex-wrap: wrap; }
-  .framework, .reviews, .faq { padding: 56px 24px; }
-  .framework h2 { font-size: 42px; }
+  .framework, .formats, .reviews, .faq { padding: 56px 24px; }
+  .framework h2, .formats h2 { font-size: 42px; }
   .reviews h2, .faq h2 { font-size: 40px; }
   .about { flex-direction: column; }
   .about__media { width: 100%; height: 380px; }
