@@ -1,5 +1,5 @@
 /* ============================================================
-   The Hero C.O.D.E. — Workshop Landing Page
+   The Hero C.O.D.E. | Workshop Landing Page
    Design tokens from the Claude Design handoff (hifi, 1180px)
    ============================================================ */
 
@@ -1149,6 +1149,7 @@ a { text-decoration: none; }
 
 .doc-section__body {
   flex: 1;
+  min-width: 0;
   font-size: 15px;
   line-height: 1.7;
   color: rgba(244,239,231,.78);
@@ -1448,6 +1449,84 @@ strong.txt-green { color: var(--green); }
 .photo-card figcaption a:hover { text-decoration: underline; }
 
 .objective__star--green { background: var(--green); }
+.objective__star--magenta { background: var(--magenta); }
+.objective__star--gold { background: var(--gold); }
+
+/* ---------------- Educator page: offerings ---------------- */
+
+.format-table-wrap { overflow-x: auto; margin-top: 6px; }
+
+.format-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.format-table th {
+  text-align: left;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(244,239,231,.6);
+  padding: 0 14px 10px 0;
+  border-bottom: 2px solid rgba(255,255,255,.14);
+}
+
+.format-table td {
+  padding: 14px 14px 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  vertical-align: top;
+}
+
+.format-table td:first-child { font-weight: 700; }
+.format-table .txt-magenta { color: var(--magenta); }
+.format-table .txt-gold { color: var(--gold); }
+.format-table .txt-blue { color: var(--blue); }
+
+.objectives-group + .objectives-group { margin-top: 28px; }
+
+.objectives-group h3 {
+  margin: 0 0 12px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.objectives-group--magenta h3 { color: var(--magenta); }
+.objectives-group--gold h3 { color: var(--gold); }
+
+.goal-line {
+  font-style: italic;
+  color: #fff;
+}
+
+.coordinator-note {
+  margin: 0;
+  padding: 14px 18px;
+  border-left: 3px solid var(--gold);
+  background: rgba(242,163,60,.07);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.card-grid--3 { grid-template-columns: repeat(3, 1fr); }
+
+.info-card--magenta { border-top: 3px solid var(--magenta); }
+.info-card--gold { border-top: 3px solid var(--gold); }
+.info-card--blue { border-top: 3px solid var(--blue); }
+
+.section-note {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgba(244,239,231,.7);
+}
+
+.section-note a { color: var(--gold); font-weight: 700; }
+.section-note a:hover { text-decoration: underline; }
 
 /* ---------------- Newsletter signup ---------------- */
 
@@ -1547,7 +1626,7 @@ strong.txt-green { color: var(--green); }
   .doc-section { flex-direction: column; gap: 18px; }
   .doc-sections > .doc-section:not(:first-child),
   .doc-sections--roomy > .doc-section:not(:first-child) { padding-top: 40px; }
-  .card-grid { grid-template-columns: 1fr; }
+  .card-grid, .card-grid--3 { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 900px) {
@@ -1596,6 +1675,16 @@ strong.txt-green { color: var(--green); }
   .newsletter { padding: 56px 24px; }
   .newsletter h2 { font-size: 36px; }
   .newsletter__form { flex-direction: column; }
+  .site-header { padding: 18px 24px; gap: 14px; flex-wrap: wrap; }
+  .site-header__actions { flex-wrap: wrap; gap: 10px; }
+  .format-table thead { display: none; }
+  .format-table tr { display: block; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .format-table td { display: block; padding: 2px 0; border: 0; }
+  .format-table td[data-label]::before {
+    content: attr(data-label) ": ";
+    font-weight: 700;
+    color: rgba(244,239,231,.55);
+  }
 }
 
 @media (max-width: 520px) {
