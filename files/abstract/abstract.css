@@ -1,0 +1,309 @@
+/* The Hero C.O.D.E. Educator Abstract
+   Print source for files/hero-code-educator-abstract.pdf.
+   Each .page is one US Letter sheet. Rebuild the PDF with build-pdf.js. */
+
+@import url('fonts/fonts.css');
+
+:root {
+  --blue: #1667a6;
+  --magenta: #cb2a6f;
+  --gold: #b8860b;
+  --green: #1c7c54;
+  --ink: #222222;
+  --muted: #686868;
+  --navy: #1b1c33;
+  --hair: #d9d9de;
+  --serif: 'Source Serif 4', Georgia, serif;
+  --sans: 'Figtree', 'Helvetica Neue', Arial, sans-serif;
+}
+
+@page { size: letter; margin: 0; }
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; padding: 0; }
+
+body {
+  background: #e6e6ea;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-optical-sizing: none;
+  font-variation-settings: "opsz" 15.5;
+  font-size: 9.55pt;
+  line-height: 11.65pt;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.page {
+  position: relative;
+  width: 8.5in;
+  height: 11in;
+  margin: 0 auto 24px;
+  padding: 0.4in 0.6in 0;
+  background: #fff;
+  overflow: hidden;
+  page-break-after: always;
+  break-after: page;
+}
+
+.page:last-child { page-break-after: auto; break-after: auto; }
+
+.page--2 { padding-top: 0.37in; }
+.page--3 { padding-top: 0.24in; }
+.page--3 .footer { bottom: 0.19in; }
+.page--3 .section { margin-top: 10pt; }
+
+@media print {
+  body { background: #fff; }
+  .page { margin: 0; }
+}
+
+p { margin: 0; }
+
+/* ---------- Footer ---------- */
+
+.footer {
+  position: absolute;
+  left: 0.6in;
+  right: 0.6in;
+  bottom: 0.3in;
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--sans);
+  font-size: 7.5pt;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ---------- Page 1 masthead ---------- */
+
+.kicker {
+  font-family: var(--sans);
+  font-size: 8.5pt;
+  font-weight: 500;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #5c5c6e;
+}
+
+.wordmark {
+  margin: 8pt 0 0;
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: 28.4pt;
+  line-height: 1;
+  color: var(--navy);
+  letter-spacing: .005em;
+}
+
+.wordmark sup {
+  font-size: 9.5pt;
+  font-weight: 700;
+  vertical-align: top;
+  position: relative;
+  top: 2pt;
+  margin-left: 2pt;
+}
+
+.tagline {
+  margin-top: 9pt;
+  font-style: italic;
+  font-size: 14.5pt;
+  line-height: 1.2;
+  color: #57556e;
+}
+
+.byline {
+  margin-top: 11pt;
+  font-family: var(--sans);
+  font-size: 9.5pt;
+  letter-spacing: .05em;
+  color: #57556e;
+}
+
+.byline .dot { margin: 0 .45em; }
+
+/* ---------- Shared type ---------- */
+
+.c-magenta { color: var(--magenta); }
+.c-gold { color: var(--gold); }
+.c-blue { color: var(--blue); }
+.c-green { color: var(--green); }
+
+b, strong { font-weight: 600; }
+
+.cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 0.33in;
+}
+
+.cols > div > p + p { margin-top: 7pt; }
+
+.cols--list { column-gap: 0.04in; }
+
+h2 {
+  margin: 0;
+  padding-bottom: 4pt;
+  font-family: var(--sans);
+  font-size: 12.5pt;
+  font-weight: 700;
+  letter-spacing: .1em;
+  line-height: 1.1;
+  text-transform: uppercase;
+  border-bottom: .6pt solid currentColor;
+}
+
+h2 + * { margin-top: 7pt; }
+
+.section { margin-top: 13pt; }
+
+.goal {
+  font-style: italic;
+  margin-bottom: 6pt;
+}
+
+.label {
+  margin: 9pt 0 6pt;
+  font-family: var(--sans);
+  font-size: 8pt;
+  font-weight: 500;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+ul {
+  margin: 0;
+  padding-left: 14pt;
+}
+
+ul li { padding-left: 0; }
+ul li + li { margin-top: 3.5pt; }
+
+/* ---------- Page 1 intro, callout, table ---------- */
+
+.intro { margin-top: 29pt; }
+
+.bar {
+  border-left: 3.2pt solid var(--magenta);
+  padding: 3pt 0 3pt 14pt;
+}
+
+.bar--gold { border-color: var(--gold); }
+.bar--blue { border-color: var(--blue); }
+
+.callout { margin-top: 14pt; }
+
+.formats {
+  width: 100%;
+  margin-top: 10pt;
+  border-collapse: collapse;
+}
+
+.formats th {
+  padding: 0 7pt 7pt 7pt;
+  text-align: left;
+  font-family: var(--sans);
+  font-size: 8pt;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--navy);
+  border-bottom-width: 1.3pt;
+  border-bottom-style: solid;
+}
+
+.formats th:nth-child(1) { border-bottom-color: var(--magenta); width: 26.2%; }
+.formats th:nth-child(2) { border-bottom-color: var(--gold); width: 28.7%; }
+.formats th:nth-child(3) { border-bottom-color: var(--blue); width: 28.7%; }
+.formats th:nth-child(4) { border-bottom-color: var(--green); }
+
+.formats td {
+  padding: 7.5pt 7pt;
+  vertical-align: middle;
+  border-bottom: .6pt solid var(--hair);
+}
+
+.formats td:first-child { font-weight: 600; }
+.formats tr:last-child td { border-bottom: 0; }
+
+/* ---------- Page 2 ---------- */
+
+.note {
+  margin-top: 10pt;
+  font-style: italic;
+}
+
+.note b {
+  font-family: var(--sans);
+  font-style: italic;
+  font-weight: 800;
+  letter-spacing: .06em;
+  color: var(--gold);
+}
+
+.keynote {
+  display: grid;
+  grid-template-columns: 1fr 3in;
+  column-gap: 0.27in;
+  align-items: start;
+}
+
+.keynote p + p { margin-top: 9pt; }
+
+.leave {
+  margin-top: 1pt;
+  padding: 10pt 14pt 12pt;
+  border: .8pt solid var(--green);
+}
+
+.leave .label { margin-top: 0; margin-bottom: 9pt; }
+.leave ul li + li { margin-top: 7pt; }
+
+.why { font-size: 9.2pt; line-height: 12.8pt; }
+.why p + p { margin-top: 8pt; }
+
+/* ---------- Page 3 ---------- */
+
+.plainly {
+  padding: 3pt 0 16pt 18pt;
+  border-left: 3.2pt solid var(--blue);
+}
+
+.plainly .label { margin-top: 0; font-style: normal; }
+.plainly p { font-style: italic; }
+.plainly p + p { margin-top: 12pt; }
+
+.talks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 0.2in;
+  margin-top: 10pt;
+}
+
+.talk {
+  padding-top: 5pt;
+  border-top: 2pt solid;
+}
+
+.talk h3 {
+  margin: 0 0 6pt;
+  font-family: var(--sans);
+  font-size: 10pt;
+  font-weight: 700;
+}
+
+.cols.contact { grid-template-columns: 4.4in 1fr; column-gap: 0.3in; }
+.contact .label { margin-top: 12pt; }
+
+.contact a {
+  display: block;
+  font-family: var(--sans);
+  font-size: 11.5pt;
+  font-weight: 700;
+  line-height: 15pt;
+  color: var(--blue);
+  text-decoration: none;
+}
