@@ -811,6 +811,18 @@ a { text-decoration: none; }
   text-align: center;
 }
 
+/* Netlify injects the reCAPTCHA widget (304 x 78) into this box */
+.form__captcha {
+  min-width: 0;
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  min-height: 78px;
+  margin-top: 8px;
+}
+
+.form__captcha > div { flex: none; width: 304px; }
+
 .contact__meta {
   margin-top: 28px;
   font-size: 14px;
@@ -1617,6 +1629,14 @@ strong.txt-green { color: var(--green); }
 }
 
 @media (max-width: 520px) {
+  /* The widget is fixed-width, so shrink it to fit narrow cards */
+  .form__captcha > div { transform: scale(.86); transform-origin: center top; }
+  .form__captcha { min-height: 69px; }
   .framework__grid { grid-template-columns: 1fr; }
   .hero__title { font-size: 44px; }
+}
+
+@media (max-width: 360px) {
+  .form__captcha > div { transform: scale(.76); }
+  .form__captcha { min-height: 60px; }
 }
