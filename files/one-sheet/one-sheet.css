@@ -1,0 +1,276 @@
+/* The Hero C.O.D.E. Speaker One-Sheet
+   Print source for files/hero-code-one-sheet.pdf. One US Letter page.
+   Shares fonts and palette with files/abstract. Rebuild with build-pdf.js. */
+
+@import url('../abstract/fonts/fonts.css');
+
+:root {
+  --blue: #1667a6;
+  --magenta: #cb2a6f;
+  --gold: #b8860b;
+  --green: #1c7c54;
+  --ink: #222222;
+  --muted: #686868;
+  --navy: #1b1c33;
+  --hair: #d9d9de;
+  --serif: 'Source Serif 4', Georgia, serif;
+  --sans: 'Figtree', 'Helvetica Neue', Arial, sans-serif;
+}
+
+@page { size: letter; margin: 0; }
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; padding: 0; }
+
+body {
+  background: #e6e6ea;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-optical-sizing: none;
+  font-variation-settings: "opsz" 15.5;
+  font-size: 10pt;
+  line-height: 13pt;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.page {
+  position: relative;
+  width: 8.5in;
+  height: 11in;
+  margin: 0 auto;
+  padding: 0.5in 0.6in 0;
+  background: #fff;
+  overflow: hidden;
+}
+
+@media print {
+  body { background: #fff; }
+}
+
+p { margin: 0; }
+b, strong { font-weight: 600; }
+
+.c-magenta { color: var(--magenta); }
+.c-gold { color: var(--gold); }
+.c-blue { color: var(--blue); }
+.c-green { color: var(--green); }
+
+.label {
+  font-family: var(--sans);
+  font-size: 8pt;
+  font-weight: 500;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+h2 {
+  margin: 0 0 8pt;
+  padding-bottom: 4pt;
+  font-family: var(--sans);
+  font-size: 11pt;
+  font-weight: 700;
+  letter-spacing: .12em;
+  line-height: 1.1;
+  text-transform: uppercase;
+  border-bottom: .6pt solid currentColor;
+}
+
+.section { margin-top: 17pt; }
+
+/* ---------- Masthead ---------- */
+
+.masthead {
+  display: grid;
+  grid-template-columns: 1fr 2.15in;
+  column-gap: 0.35in;
+  align-items: center;
+}
+
+.masthead .label { color: #5c5c6e; }
+
+.name {
+  margin: 8pt 0 0;
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: 27pt;
+  line-height: 1.02;
+  color: var(--navy);
+}
+
+.role {
+  margin-top: 7pt;
+  font-style: italic;
+  font-size: 13pt;
+  line-height: 16pt;
+  color: #57556e;
+}
+
+.program {
+  margin-top: 16pt;
+  padding-left: 13pt;
+  border-left: 3.2pt solid var(--magenta);
+}
+
+.wordmark {
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: 15pt;
+  line-height: 1.1;
+  color: var(--navy);
+}
+
+.wordmark sup { font-size: 6.5pt; font-weight: 700; vertical-align: top; margin-left: 1pt; }
+
+.wordmark .sub {
+  margin-left: 6pt;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 11.5pt;
+  color: #57556e;
+}
+
+.program p { margin-top: 5pt; }
+
+.photo {
+  width: 2.15in;
+  height: 2.15in;
+  border-radius: 4pt;
+  object-fit: cover;
+  object-position: center 18%;
+  display: block;
+}
+
+/* ---------- Formats ---------- */
+
+.formats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 0.2in;
+}
+
+.format {
+  padding-top: 6pt;
+  border-top: 2pt solid;
+}
+
+.format h3 {
+  margin: 0 0 4pt;
+  font-family: var(--sans);
+  font-size: 10.5pt;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.format .len {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 9pt;
+  color: var(--navy);
+}
+
+.format p + p { margin-top: 3pt; }
+
+.formats-note {
+  margin-top: 9pt;
+  font-family: var(--sans);
+  font-size: 9pt;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+/* ---------- Credentials ---------- */
+
+.creds {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  columns: 2;
+  column-gap: 0.33in;
+}
+
+.creds li {
+  position: relative;
+  break-inside: avoid;
+  margin-bottom: 6pt;
+  padding-left: 14pt;
+}
+
+.creds li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4.2pt;
+  width: 6pt;
+  height: 6pt;
+  background: var(--green);
+  clip-path: polygon(50% 0, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+/* ---------- Testimonials ---------- */
+
+.quotes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 0.22in;
+}
+
+.quote {
+  padding: 2pt 0 2pt 11pt;
+  border-left: 3.2pt solid;
+}
+
+.quote p { font-style: italic; }
+
+.quote .who {
+  margin-top: 7pt;
+  font-style: normal;
+  font-family: var(--sans);
+  font-size: 8.5pt;
+  line-height: 11pt;
+}
+
+.quote .who b { display: block; font-weight: 700; color: var(--navy); }
+.quote .who span { color: var(--muted); }
+
+/* ---------- Bottom band ---------- */
+
+.band {
+  position: absolute;
+  left: 0.6in;
+  right: 0.6in;
+  bottom: 0.64in;
+  display: grid;
+  grid-template-columns: 1fr 2.6in;
+  column-gap: 0.35in;
+  padding-top: 12pt;
+  border-top: .6pt solid var(--hair);
+}
+
+.band .label { margin-bottom: 5pt; }
+
+.contact a {
+  display: block;
+  font-family: var(--sans);
+  font-size: 12pt;
+  font-weight: 700;
+  line-height: 16pt;
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.footer {
+  position: absolute;
+  left: 0.6in;
+  right: 0.6in;
+  bottom: 0.28in;
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--sans);
+  font-size: 7.5pt;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
