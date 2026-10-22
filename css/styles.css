@@ -144,7 +144,11 @@ a { text-decoration: none; }
 }
 
 .btn-outline--lg {
+  display: inline-block;
+  max-width: 100%;
   font-size: 14px;
+  line-height: 1.35;
+  text-align: center;
   padding: 14px 26px;
 }
 
@@ -1629,6 +1633,7 @@ strong.txt-green { color: var(--green); }
 }
 
 @media (max-width: 520px) {
+  .btn-outline--lg { padding: 13px 18px; letter-spacing: .02em; }
   /* The widget is fixed-width, so shrink it to fit narrow cards */
   .form__captcha > div { transform: scale(.86); transform-origin: center top; }
   .form__captcha { min-height: 69px; }
